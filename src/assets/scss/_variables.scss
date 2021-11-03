@@ -1,0 +1,39 @@
+@import "~bulma/sass/utilities/_all";
+
+$dark-blue: rgb(43, 49, 55);
+$dark-blue-invert: findColorInvert($dark-blue);
+$darker-blue: rgb(36, 41, 46);
+$darker-blue-invert: findColorInvert($darker-blue);
+// 5. Add new color variables to the color map.
+@import "~bulma/sass/utilities/derived-variables";
+$addColors: (
+        "dark-blue":($dark-blue, $dark-blue-invert),
+        "darker-blue": ($darker-blue, $darker-blue-invert),
+);
+$colors: map-merge($colors, $addColors);
+
+.has-tech-image {
+  background-image: url(/simple-tech.svg);
+}
+
+.has-tech-image2 {
+  background-size: cover;
+  background-position: center;
+  background-image: url(/simple-tech2.svg);
+}
+
+.has-margin-0 {
+  margin: 0 !important;
+}
+
+.min-background {
+  min-height: 300px;
+}
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "_notification.scss";
+@import "~bulma-checkradio";
+@import "~bulma-tooltip";
+
+
